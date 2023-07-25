@@ -14,5 +14,9 @@ for index, row in df.iterrows():
     pdf.cell(w=0, h=12, txt=row['Topic'], align="L")
     pdf.line(10, 21, 200, 21)
 
+    number_of_pages = row['Pages'] - 1
+    for i in range(number_of_pages):
+        pdf.add_page()
+
 
 pdf.output("output.pdf")
